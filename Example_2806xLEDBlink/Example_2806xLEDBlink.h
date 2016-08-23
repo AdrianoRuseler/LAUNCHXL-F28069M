@@ -27,7 +27,44 @@
 #define PIX1  		(float)3.1415926535897932384626433832795
 #define PIX2 		(float)3.1415926535897932384626433832795*2
 
+#define	TS_PLL	2.5025025025025e-005
 
 
+
+//-----------------------------------------------------------------------------/
+// Estrutura para geração de sinais trigonométricos
+//-----------------------------------------------------------------------------/
+
+struct TRIGONOMETRICO
+{
+	float wt;
+	float amp;
+	float senoA;
+	float senoB;
+	float senoC;
+	float coseA;
+	float coseB;
+	float coseC;
+};
+
+
+
+//-----------------------------------------------------------------------------/
+// Estrutura de depuração gráfica
+//-----------------------------------------------------------------------------/
+#define PT	666
+#define dec_max 1
+
+struct GRAFICOS
+{
+	float graf1[PT];
+	float graf2[PT];
+	float graf3[PT];
+	float *g1;
+	float *g2;
+	float *g3;
+	int g;
+	int dec;
+};
 
 

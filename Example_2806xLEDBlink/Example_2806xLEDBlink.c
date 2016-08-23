@@ -21,7 +21,7 @@
 //             http://www.ti.com/ ALL RIGHTS RESERVED $
 //###########################################################################
 
-#include "Example_2806xLEDBlink.h"
+#include "Example_2806xLEDBlink.h"  //
 #include "DSP28x_Project.h"     // Device Headerfile and Examples Include File
 #include "C28x_FPU_FastRTS.h"
 #include <math.h>
@@ -42,10 +42,18 @@ extern Uint16 RamfuncsRunStart;
 extern Uint16 RamfuncsLoadSize;
 #endif
 
+/** Gráficos **/
+#if DEBUG
+// #pragma DATA_SECTION(graf , "ramfuncs");
+struct GRAFICOS graf;
+
+#endif
+
 
 // Prototype statements for functions found within this file.
 __interrupt void cpu_timer0_isr(void);
 
+struct TRIGONOMETRICO trig;
 
 void main(void)
 {
@@ -94,7 +102,7 @@ void main(void)
 	InitCpuTimers();   // For this example, only initialize the Cpu Timers
 	// Configure CPU-Timer 0 to interrupt every 500 milliseconds:
 	// 80MHz CPU Freq, 50 millisecond Period (in uSeconds)
-	ConfigCpuTimer(&CpuTimer0, 80, 500000);
+	ConfigCpuTimer(&CpuTimer0, 80, 20);
 
 
 	// To ensure precise timing, use write-only instructions to write to the entire register. Therefore, if any
@@ -130,6 +138,12 @@ void main(void)
 	InitFlash();
 #endif
 
+
+	graf.g1=&trig.wt;
+	graf.g2=&trig.senoA;
+	graf.g3=&trig.coseA;
+
+
 	// Step 6. IDLE loop. Just sit and loop forever (optional):
 	for(;;);
 }
@@ -140,16 +154,31 @@ __interrupt void cpu_timer0_isr(void)
 	CpuTimer0.InterruptCount++;
 	GpioDataRegs.GPBTOGGLE.bit.GPIO34 = 1; // Toggle GPIO34 once per 500 milliseconds
 
-	/*
-	trig.wt+=temp.t2f*TS_PLL;
+
+	trig.wt+=377*TS_PLL;
 
 	if(trig.wt>PIX1) trig.wt = trig.wt - PIX2;
 
 	sincos(trig.wt, &(trig.senoA), &(trig.coseA));
 	sincos((trig.wt-2.09439510239319549230), &(trig.senoB), &(trig.coseB));
 	sincos((trig.wt+2.09439510239319549230), &(trig.senoC), &(trig.coseC));
-	 */
 
+
+#if DEBUG
+	if(++graf.dec==dec_max)
+	{
+		graf.dec=0;
+
+		graf.graf1[graf.g]=*graf.g1;
+		graf.graf2[graf.g]=*graf.g2;
+		graf.graf3[graf.g]=*graf.g3;
+
+		if(++graf.g==PT)
+		{
+			graf.g=0;
+		}
+	}
+#endif
 
 	// Acknowledge this interrupt to receive more interrupts from group 1
 	PieCtrlRegs.PIEACK.all = PIEACK_GROUP1;
