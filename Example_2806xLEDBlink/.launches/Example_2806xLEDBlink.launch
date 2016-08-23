@@ -5,7 +5,7 @@
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROGRAM.Texas Instruments XDS100v2 USB Debug Probe_0/C28xx" value="${build_artifact:Example_2806xLEDBlink}"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROJECT.Texas Instruments XDS100v2 USB Debug Probe_0/C28xx" value="Example_2806xLEDBlink"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_TARGET_CONFIG" value="${target_config_active_default:Example_2806xLEDBlink}"/>
-<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.Texas Instruments XDS100v2 USB Debug Probe_0/C28xx" value="C:/Users\Administrator\Documents\GitHub\LAUNCHXL-F28069M\Example_2806xLEDBlink\Flash\Example_2806xLEDBlink.out"/>
+<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.Texas Instruments XDS100v2 USB Debug Probe_0/C28xx" value="C:/Users\Administrator\Documents\GitHub\LAUNCHXL-F28069M\Example_2806xLEDBlink\Debug\Example_2806xLEDBlink.out"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/Example_2806xLEDBlink"/>
 </listAttribute>

@@ -56,6 +56,8 @@
 								<option id="com.ti.ccstudio.buildDefinitions.C2000_15.12.compilerID.DEFINE.2115650809" name="Pre-define NAME (--define, -D)" superClass="com.ti.ccstudio.buildDefinitions.C2000_15.12.compilerID.DEFINE" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="&quot;_DEBUG&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;LARGE_MODEL&quot;"/>
+									<listOptionValue builtIn="false" value="FLASH=0"/>
+									<listOptionValue builtIn="false" value="DEBUG=1"/>
 								</option>
 								<option id="com.ti.ccstudio.buildDefinitions.C2000_15.12.compilerID.QUIET_LEVEL.1189158121" name="Quiet Level" superClass="com.ti.ccstudio.buildDefinitions.C2000_15.12.compilerID.QUIET_LEVEL" value="com.ti.ccstudio.buildDefinitions.C2000_15.12.compilerID.QUIET_LEVEL.QUIET" valueType="enumerated"/>
 								<option id="com.ti.ccstudio.buildDefinitions.C2000_15.12.compilerID.ISSUE_REMARKS.239538951" name="Issue remarks (--issue_remarks, -pdr)" superClass="com.ti.ccstudio.buildDefinitions.C2000_15.12.compilerID.ISSUE_REMARKS" value="true" valueType="boolean"/>
@@ -166,6 +168,8 @@
 								<option id="com.ti.ccstudio.buildDefinitions.C2000_15.12.compilerID.DEFINE.1155629087" name="Pre-define NAME (--define, -D)" superClass="com.ti.ccstudio.buildDefinitions.C2000_15.12.compilerID.DEFINE" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="&quot;_DEBUG&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;LARGE_MODEL&quot;"/>
+									<listOptionValue builtIn="false" value="FLASH=1"/>
+									<listOptionValue builtIn="false" value="DEBUG=1"/>
 								</option>
 								<option id="com.ti.ccstudio.buildDefinitions.C2000_15.12.compilerID.QUIET_LEVEL.1844178199" name="Quiet Level" superClass="com.ti.ccstudio.buildDefinitions.C2000_15.12.compilerID.QUIET_LEVEL" value="com.ti.ccstudio.buildDefinitions.C2000_15.12.compilerID.QUIET_LEVEL.QUIET" valueType="enumerated"/>
 								<option id="com.ti.ccstudio.buildDefinitions.C2000_15.12.compilerID.ISSUE_REMARKS.322380971" name="Issue remarks (--issue_remarks, -pdr)" superClass="com.ti.ccstudio.buildDefinitions.C2000_15.12.compilerID.ISSUE_REMARKS" value="true" valueType="boolean"/>
@@ -234,6 +238,14 @@
 			<content-type-mapping configuration="" content-type="org.eclipse.cdt.core.cxxHeader" language="com.ti.ccstudio.core.TIGPPLanguage"/>
 			<content-type-mapping configuration="" content-type="org.eclipse.cdt.core.cxxSource" language="com.ti.ccstudio.core.TIGPPLanguage"/>
 		</project-mappings>
+	</storageModule>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Flash">
+			<resource resourceType="PROJECT" workspacePath="/Example_2806xLEDBlink"/>
+		</configuration>
+		<configuration configurationName="Debug">
+			<resource resourceType="PROJECT" workspacePath="/Example_2806xLEDBlink"/>
+		</configuration>
 	</storageModule>
 	<storageModule moduleId="scannerConfiguration"/>
 </cproject>
